@@ -93,3 +93,26 @@ if name == "Juan Gabriel" {
 (27, "Felipe Carrasco") == (31, "Juan Gabriel") // false
 (27, "Felipe Carrasco") > (31, "Juan Gabriel") // false
 
+// operador ternario
+//    explicacion sin ternario
+//    if question {
+//        answer1
+//    }else{
+//        answer2
+//    }
+
+
+let contentHigh = 40
+var hasImage = true
+var rowHigh = 0
+
+ // version sin ternario
+ if hasImage {
+    rowHigh = contentHigh + 50
+}else {
+    rowHigh = contentHigh + 10
+}
+
+// operador ternario
+rowHigh = contentHigh + (hasImage ? 50 : 10)
+print(rowHigh)
