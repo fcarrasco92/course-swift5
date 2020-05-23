@@ -41,3 +41,60 @@ print("El código de estado es \(http200Status.statusCode) y el mensaje es:  \(h
 let informationPersonal = (name: "Felipe", lastName: "Carrasco", age: 27)
 
 print("Hi, my name is \(informationPersonal.name + " " + informationPersonal.lastName) and I am \(informationPersonal.age) years old")
+
+
+// Optional Nil
+let possibleAge = "27"
+let convertAge = Int(possibleAge) // Int?
+
+var serverResponseCode: Int? = 404
+serverResponseCode = nil
+
+var surveyAnswer: String?
+surveyAnswer = "42"
+
+
+// Force unwrapping de una variable optional
+// print(surveyAnswer!) is dangerous
+
+if convertAge != nil {
+    print("la edad del usuario no es null: \(convertAge!)")
+}else{
+    print("la edad del usuario es null: ")
+}
+
+// Optional Binding
+
+if let actualNumber = surveyAnswer {
+    // al llegar aquí, surveyAnswer != nil
+    print("El String \(surveyAnswer) tiene el valor \(actualNumber)")
+} else{
+    // al llegar aquí, surveyAnswer = nil
+    print("El String \(surveyAnswer) es nil ...")
+}
+
+if let firstNumber = Int("4"),
+    let secondNumber = Int("42"),
+    firstNumber < secondNumber && secondNumber < 100{
+    print("\(firstNumber) < \(secondNumber) < 100")
+}
+
+
+// Unwrap Implícito
+
+let possibleString: String?  = "Un String opcional"
+let forcedString: String = possibleString!
+
+let assumedString: String! = "Un String unwrapped de forma implicita a partir de un opcional."
+
+let implicitString: String = assumedString
+
+if assumedString != nil {
+    print(assumedString!)
+}
+
+if let definitiveString = assumedString {
+    print(definitiveString)
+}
+
+print(assumedString)
