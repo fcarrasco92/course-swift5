@@ -58,5 +58,7 @@ if age > 10{
     assertionFailure("La edad de una persona no puede ser negativa")
 }
 
+let num: Int = nil
+
 
 
