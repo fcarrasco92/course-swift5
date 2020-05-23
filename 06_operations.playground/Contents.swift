@@ -116,3 +116,20 @@ var rowHigh = 0
 // operador ternario
 rowHigh = contentHigh + (hasImage ? 50 : 10)
 print(rowHigh)
+
+// Operador Nil Coalescing
+let defaultAge = 18
+var userAge: Int?
+userAge = 27
+var ageToBeUsed = userAge ?? defaultAge
+// ageToBeUsed = (useAge != nil ? useAge! : defaultAge)
+
+let defaultColor = "red"
+var userColorName: String?
+
+var colorNameToUse = userColorName ?? defaultColor
+
+let defaultUser = "Felipe Carrasco"
+var userName: String? = "Cristiano Ronaldo"
+
+var userNameToUse = userName ?? defaultUser
