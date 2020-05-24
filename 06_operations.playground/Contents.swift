@@ -169,3 +169,53 @@ let range = ...5 // -infinity...5
 range.contains(7) // false
 range.contains(4) // true
 range.contains(-2) // true
+
+
+// operadores logicos
+
+let allowEntry = false
+// EXample Operator NOT
+if !allowEntry {
+    print("Acceso denegado!")
+}
+
+let enterCode = true
+let passRetinaScan = true
+// Example operator AND
+if enterCode && passRetinaScan { // AND
+    print("Bienvenido a la empresa")
+}else{
+    print("Acceso Denegado!")
+}
+
+let hasMoney = false
+let hasInvitation = false
+// Example operator OR
+if hasMoney || hasInvitation {
+   print("Bienvenido a la empresa")
+}else{
+    print("No eres bienvenido!")
+}
+
+if (enterCode && passRetinaScan) ||
+    hasMoney || hasInvitation{
+    print("Has entrado!")
+}else{
+    print("Acceso denegado")
+}
+
+// RETO
+var knowSwift = false
+let hasMacOs = true
+let knowProgramming = true
+
+if knowSwift && hasMacOs && knowProgramming{
+    print("Ready for Job in IOS apps")
+}else{
+    print("You need to practice more with SWIFT")
+}
+
+knowSwift = true
+let resultExam = knowSwift && hasMacOs && knowProgramming ? "Ready for Job in IOS apps" : "You need to practice more with SWIFT"
+
+print(resultExam)
