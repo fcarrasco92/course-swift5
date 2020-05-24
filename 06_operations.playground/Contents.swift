@@ -133,3 +133,39 @@ let defaultUser = "Felipe Carrasco"
 var userName: String? = "Cristiano Ronaldo"
 
 var userNameToUse = userName ?? defaultUser
+
+// Rangos
+
+for idx in 1...5{
+    print(idx)
+}
+print("*********")
+for idx in 1..<5{
+    print(idx)
+}
+
+let names = ["Felipe", "Augusto", "Rodrigo"]
+
+for i in 0..<names.count{
+    print("la persona \(i+1) se llama \(names[i])")
+}
+
+// desde la posición 1
+for name in names[1...]{
+    print(name)
+}
+print("****** -- ****")
+// desde la posición 0 hasta el final
+for name in names[...]{
+    print(name)
+}
+print("****** -- *****")
+// desde la posición 0 hasta la posición 1
+for name in names[...1]{
+    print(name)
+}
+
+let range = ...5 // -infinity...5
+range.contains(7) // false
+range.contains(4) // true
+range.contains(-2) // true
