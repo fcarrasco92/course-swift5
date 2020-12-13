@@ -110,3 +110,34 @@ if name == "Juan Gabriel" {
 (28, "Felipe Carrasco") > (31, "Juan Gabriel") // false --> porque Juan  es mayor que Felipe
 (28, "Felipe Carrasco") == (31, "Juan Gabriel") // false --> porque la edad ambos es diferente
 (28, "Felipe Carrasco") != (31, "Juan Gabriel") // true --> porque la edad de ambos es diferente
+
+
+/*
+ sintaxi:
+ if question {
+    answer1
+ }else{
+    answer2
+ }
+ */
+
+let contentHeight = 40
+var hasImage = true
+var rowHeight = 0
+
+// asignación basica
+if hasImage {
+    rowHeight = contentHeight + 50
+}else{
+    rowHeight = contentHeight + 10
+}
+
+// operador ternario
+rowHeight = contentHeight + (hasImage ? 50 : 10)
+print(rowHeight)
+
+// operador ternario example for  age enter to discoteque
+let age = 17
+
+var message = age >= 10 ? "You can enter to the party" : "You cannot enter to the party"
+print(message)
