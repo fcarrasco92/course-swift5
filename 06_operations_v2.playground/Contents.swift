@@ -141,3 +141,24 @@ let age = 17
 
 var message = age >= 10 ? "You can enter to the party" : "You cannot enter to the party"
 print(message)
+
+
+// Operador Nil Coalescing
+let defaultAge = 18
+var userAge: Int?
+
+var ageToBeUsed = userAge ?? defaultAge
+// ageToBeUsed = (userAge != nil ? userAge!: defaultAge)
+
+let defaultColorName = "red"
+var userColorName: String?
+
+var colorNameToUse = userColorName ?? defaultColorName
+
+// Reto: crear una variable usuario, si no existe dejar un valor por default.
+
+let defaultUserName = "Anonymous"
+var userName: String?
+userName = "Felipe Carrasco"
+var userNameToBeUse = userName ?? defaultUserName
+print("the user connected is \(userNameToBeUse)")
