@@ -143,7 +143,6 @@ var message = age >= 10 ? "You can enter to the party" : "You cannot enter to th
 print(message)
 
 
-
 // Operador Nil Coalescing
 let defaultAge = 18
 var userAge: Int?
