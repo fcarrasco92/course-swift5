@@ -162,3 +162,62 @@ var userName: String?
 userName = "Felipe Carrasco"
 var userNameToBeUse = userName ?? defaultUserName
 print("the user connected is \(userNameToBeUse)")
+
+// range o Rangos
+
+// rango cerrado
+for idx in 1...5 {
+    print(idx)
+}
+
+// rango semi abierto
+for idx in 1..<5 {
+    print(idx)
+}
+
+let names = ["Ricardo", "Felipe", "José", "Pepe"]
+
+for i in 0..<names.count {
+    print("la persona \(i+1) se llama \(names[i])")
+}
+print("*************************+")
+for name in names[1...] {
+    print(name)
+}
+
+print("********* tomar hasta la posición 2 pero comienza del 0 osea posición 3")
+
+for name in names[...2] {
+    print(name)
+}
+
+print("********* tomar hasta la posición 1 pero comienza del 0 osea posición 2")
+
+for name in names[..<2] {
+    print(name)
+}
+
+let range = ...5 // -infinity...5
+range.contains(7)
+range.contains(4)
+range.contains(-2)
+// apuntes
+
+let numberOne = 10
+let numberTwo = 20
+
+// Toma del primer valor hasta el último
+let rangeOne = numberOne...numberTwo
+print(rangeOne)
+
+// Excluye el último valor
+let rangeTwo = numberOne..<numberTwo
+rangeTwo.contains(20)
+
+// llega al ultimo independiente del primero
+let rangeThree = ...numberTwo
+
+//Toma el primer valor hasta el +infinito
+let rangeFour = numberOne...
+rangeFour.contains(40)
+
