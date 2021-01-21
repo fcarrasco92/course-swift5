@@ -221,3 +221,62 @@ let rangeThree = ...numberTwo
 let rangeFour = numberOne...
 rangeFour.contains(40)
 
+// OPERATOR LOGIC
+
+let allowEntry = false
+
+// negación = NOT
+// ! = negar
+if !allowEntry {
+    print("Acceso denegado")
+}
+
+// AND = se debe cumplir dos o más condiciones
+let enterDoorCode = true
+let passRetinaScan = true
+
+if enterDoorCode && passRetinaScan { // AND
+    print("Bienvenido")
+}else{
+    print("Acceso denegado")
+}
+
+// OR = se cumplir al menos una condicion
+
+let hasMoney = true
+let hasInvitation = false
+
+if hasMoney || hasInvitation { // OR
+    print("Bienvenido a la fiesta")
+}else{
+    print("no eres bienvenido")
+}
+
+if (enterDoorCode && passRetinaScan) ||
+    hasMoney || hasInvitation { // multiple validation
+    print("Has entrado")
+}else{
+    print("Acceso denegado")
+}
+
+// Reto: validate access to Party
+
+let ageValid = 28
+let hasDollars = true
+let hasinvitationPersonal = true
+
+// must meet at least one condition
+
+if ageValid > 18 || hasinvitationPersonal || hasDollars {
+    print("You can enter to the party")
+}else{
+    print("Ypu can't enter to the party")
+}
+
+// must meet all conditions
+
+if ageValid > 18 && hasinvitationPersonal && hasDollars {
+    print("You can enter to the party")
+}else{
+    print("Ypu can't enter to the party")
+}
