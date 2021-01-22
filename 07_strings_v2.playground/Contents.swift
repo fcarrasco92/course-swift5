@@ -126,3 +126,15 @@ print(welcome)
 let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
 
 welcome.removeSubrange(range)
+
+
+// learn SubString
+
+greetingMessage
+let index = greetingMessage.firstIndex(of: ",") ?? greetingMessage.endIndex
+print(index)
+let firstPart = greetingMessage[..<index]
+print(firstPart)
+
+let newString = String(firstPart)
+print(newString)
