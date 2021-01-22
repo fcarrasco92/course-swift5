@@ -138,3 +138,39 @@ print(firstPart)
 
 let newString = String(firstPart)
 print(newString)
+
+// learn prefix and suffix
+
+let newGreeting = "Hola, soy Felipe Carrasco"
+newGreeting.hasPrefix("Hola")
+newGreeting.hasSuffix("Adios")
+newGreeting.hasSuffix("o")
+
+let collection = [
+    "Act 1 Scene 1",
+    "Act 1 Scene 2",
+    "Act 1 Scene 3",
+    "Act 1 Scene 4",
+    "Act 1 Scene 5",
+    "Act 2 Scene 1",
+    "Act 2 Scene 2",
+    "Act 2 Scene 3",
+    "Act 3 Scene 1",
+    "Act 3 Scene 2",
+]
+
+var act1SceneCount = 0
+
+for scene in collection {
+    if scene.hasPrefix("Act 1"){
+        act1SceneCount += 1
+    }
+}
+
+print(" El numero de escenas del acto 1 \(act1SceneCount)")
+
+// resumen es similar al contains, a diferencia que está busca dentro de la primera (prefix), con suffix busca si está dentro la de ultima palabra o letra de la frase.
+
+
+
+
