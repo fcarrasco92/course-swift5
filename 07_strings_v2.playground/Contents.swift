@@ -174,3 +174,21 @@ print(" El numero de escenas del acto 1 \(act1SceneCount)")
 
 
 
+// representaciones UNICODE
+
+// Unicode es el estándar de codificación de caracteres compatible con cualquier dispositivo e idioma.
+
+let ghost = "¡¡fantasma!!  👻"
+
+for codeUnit in ghost.utf8{
+    print(codeUnit, terminator: " ")
+}
+print(" ")
+for codeUnit in ghost.utf16{
+    print(codeUnit, terminator: " ")
+}
+
+print(" ")
+for codeUnit in ghost.unicodeScalars{
+    print(codeUnit, terminator: " ")
+}
