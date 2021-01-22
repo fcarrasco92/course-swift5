@@ -30,3 +30,31 @@ Nice to meet you
 """
 
 print(greeting)
+
+var emptyString = "" // String vacio
+var anotherEmptyString = String() // String vacio, Inicializado
+
+if emptyString.isEmpty {
+    print("nada que ver")
+}else{
+    print("El string tiene un valor")
+}
+
+var newSomeString = "un caballo"
+newSomeString += " y un carruaje"
+newSomeString += " y un soldado"
+
+let aString = "Juan Gabriela"
+// aString = " y Ricardo solis" //  tira un error porque es una constante y en inmutable.
+
+var a = "A"
+var b = "B"
+print("a vale \(a) y b vale \(b)")
+b = a
+print("a vale \(a) y b vale \(b)")
+b = "C"
+print("a vale \(a) y b vale \(b)")
+a = "D"
+print("a vale \(a) y b vale \(b)")
+
+
