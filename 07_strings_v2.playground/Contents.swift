@@ -99,3 +99,30 @@ let multiplierTable:UInt8 = 5
 for index in 1...10 {
     print("\(multiplierTable) x 1 = \(multiplierTable * UInt8(index))")
 }
+
+
+// learn INDEX in String
+
+let greetingMessage = "Hola, ¿que tal?"
+greetingMessage[greetingMessage.startIndex]
+//greetingMessage[greetingMessage.endIndex] it's not possible
+// take the last index
+greetingMessage[greetingMessage.index(before: greetingMessage.endIndex)]
+greetingMessage[greetingMessage.index(after: greetingMessage.startIndex)]
+
+// recorrer greetingMessage con un FOR
+for idx in greetingMessage.indices {
+    print("\(greetingMessage[idx])", terminator: "")
+}
+
+var welcome = "hola"
+
+welcome.insert("!", at: welcome.endIndex)
+welcome.insert(contentsOf: " que tal", at: welcome.index(before: welcome.endIndex))
+
+welcome.remove(at: welcome.index(before: welcome.endIndex ))
+print(welcome)
+
+let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+
+welcome.removeSubrange(range)
