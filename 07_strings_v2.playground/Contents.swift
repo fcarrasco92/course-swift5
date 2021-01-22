@@ -58,3 +58,44 @@ a = "D"
 print("a vale \(a) y b vale \(b)")
 
 
+// characters
+
+let myName = "Felipe Carrasco"
+
+for character in myName{
+    print(character)
+}
+
+print(myName.count)
+
+let exclamationMark : Character = "!"
+
+let nameChars: [Character] = ["F","E", "L","I","P","E"]
+var nameString = String(nameChars)
+
+let compoundName = "Felipe " + " Carrasco"
+
+// nameString += exclamationMark --> show error, because are differents type there are two solution cast with String(exclamationMark) or use append
+// solution 1: nameString += String(exclamationMark)
+nameString.append(exclamationMark)
+
+let multiplier = 3
+var message = "El producto de \(multiplier) x 3.5 es \(Double(multiplier) * 3.5 )"
+message.append(exclamationMark)
+print(message)
+
+
+// reto 1: crear array character con mi nombre
+// reto 2: imprimir la tabla de multiplcar
+
+// reto 1
+let nameCompleteChar: [Character] = ["F","e","l","i","p","e"]
+let nameCompleteString = String(nameCompleteChar)
+print(nameCompleteString)
+
+// reto 2
+
+let multiplierTable:UInt8 = 5
+for index in 1...10 {
+    print("\(multiplierTable) x 1 = \(multiplierTable * UInt8(index))")
+}
