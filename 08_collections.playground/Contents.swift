@@ -84,3 +84,22 @@ print(pepper)
 
 let _ = shoppingList.removeLast()
 
+for item in shoppingList {
+    print(item)
+}
+print("********* \n")
+for (idx, item) in shoppingList.enumerated() {
+    print("\(idx + 1): \(item)")
+}
+
+// Reto
+// List of Family
+
+for item in familyNames {
+    print(item)
+}
+
+// List Family with index
+for (idx, item) in familyNames.enumerated() {
+    print("\(idx + 1) : \(item)")
+}
