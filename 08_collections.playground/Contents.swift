@@ -31,7 +31,7 @@ aLotOfDoubles.count
 
 // otra forma de crear array
 
-var shoppingList: [String] = ["papas", "pimientos", "tortillas", "choclo"]
+var shoppingList: [String] = ["papas", "pimientos", "tortillas", "choclo", "jalapeño"]
 shoppingList.count
 
 // RETO - crear un array con los nombres de mi familia.
@@ -52,3 +52,35 @@ print(familyNames.count)
 var familyNamesTwo = ["Felipe", "Isabel", "Fernanda", "Luis", "Nataly", "Ignacio", "Vicente"]
 
 print(familyNamesTwo.count)
+
+// acceder y modificar elementos array
+
+if shoppingList.isEmpty {
+    print("la lista de la compra está vacia")
+}else{
+    print("Mandamos a Felipe a Comprar")
+}
+
+shoppingList.append("Coca Cola")
+shoppingList.count
+
+// add more items.
+shoppingList += ["Palta", "Tomate", "carne"]
+shoppingList.count
+
+// get first element
+var firstElement = shoppingList[0]
+shoppingList[0] = "Huevos" // update item by position
+
+shoppingList
+shoppingList[5]
+shoppingList[4...6]
+shoppingList[4...6] = ["Naranja", "Platano", "Mango"]
+shoppingList
+
+let pepper = shoppingList.remove(at: 1)
+shoppingList
+print(pepper)
+
+let _ = shoppingList.removeLast()
+
