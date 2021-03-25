@@ -103,3 +103,47 @@ for item in familyNames {
 for (idx, item) in familyNames.enumerated() {
     print("\(idx + 1) : \(item)")
 }
+
+
+
+// Conjunto (Set)
+// en los conjuntos no hay orden
+
+var letters = Set<Character>()
+letters.count
+letters.insert("a")
+letters.insert("h")
+letters.insert("b")
+letters
+
+var favoriteGames: Set<String> = ["Final Fantasy", "World of Warcraft", "Farcry"]
+
+favoriteGames.count
+
+if favoriteGames.isEmpty {
+    print("No hay Juegos Favoritos")
+}else {
+    print("Hay \(favoriteGames.count) juegos favoritos")
+}
+
+favoriteGames.insert("Metal Gear")
+
+if let removedGame = favoriteGames.remove("Farcry"){
+    print("He Eliminado de la lista \(removedGame)")
+}else{
+    print("No se ha podido elminar")
+}
+
+// validate if exists
+
+if favoriteGames.contains("Metal Gear"){
+    print("Me encanta ese Juego")
+}
+
+// without index
+// sorted = sirve para ordenar
+for vg in favoriteGames.sorted() {
+    print(vg)
+}
+
+
