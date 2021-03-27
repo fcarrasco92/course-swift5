@@ -213,3 +213,70 @@ favouriteFood.isSuperset(of: favouriteFruits)
 favouriteFood.isDisjoint(with: favouriteFruits)
 
 
+// Dictionary
+
+// tiene clave  y valor (key: value) [k1:v1, k2:v2, ....]
+
+var namesOfIntegers = [Int: String]()
+namesOfIntegers[15] = "quince" // 15 es key y quince es valor
+namesOfIntegers = [:]
+
+var airports: [String: String] = ["YYZ": "Toronto",
+                                  "DUB": "Dublin",
+                                  "PMI": "Palma de Mallorca"]
+
+
+airports.count
+
+if airports.isEmpty {
+    print("there are not airports created")
+}
+
+airports["LHR"] = "London city Airport"
+airports["LHR"] = "London Heathrow"
+airports
+
+if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB"){
+    print("the airport had the old name of \(oldValue)")
+}
+
+airports
+
+if let airportName = airports["DUB"]{
+    print("El airport de dub es: \(airportName)")
+}
+
+airports["PMI"] = nil
+airports
+
+airports.removeValue(forKey: "DUB")
+airports
+
+if let removeAirport = airports.removeValue(forKey: "DUB"){
+    print("the airport \(removeAirport) was removed ")
+}
+
+// Reto
+// create a dictionary with name as key and age like value.
+
+var familyNameDic: [String: Int] = ["Felipe": 28,
+                                     "Isabel": 56,
+                                     "Enrique": 57,
+                                     "Nataly": 32,
+                                     "Fernanda": 18
+]
+print("cantidad de familia: \(familyNameDic.count)")
+let ageUser = familyNameDic["Felipe"] ?? 0
+print(ageUser)
+// declare empty Dictionary
+var familyNameDicTwo: [String: Int8] = [:]
+
+familyNameDicTwo["Felipe"] =  28
+familyNameDicTwo["Isabel"] = 56
+familyNameDicTwo["Enrique"] = 57
+familyNameDicTwo["Nataly"] = 32
+familyNameDicTwo["Fernanda"] = 18
+
+print("cantidad de familia: \(familyNameDicTwo.count)")
+
+
