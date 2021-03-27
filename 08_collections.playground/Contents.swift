@@ -146,4 +146,70 @@ for vg in favoriteGames.sorted() {
     print(vg)
 }
 
+// iteration and operation about Set
+
+let oddDigits: Set = [1,3,5,7,9]
+let evenDigits: Set = [0, 2, 4, 6, 8]
+let primeNumbers: Set = [2,3,5,7]
+
+// A union B = elementos que son o bien de A, o bien de B o de los dos.
+
+oddDigits.union(evenDigits).sorted() // join A with B
+
+// A intersección B = elementos que son a la vez de A y de B
+// intersección es el conjunto de los elementos en común
+oddDigits.intersection(evenDigits)
+evenDigits.intersection(primeNumbers).sorted()
+oddDigits.intersection(primeNumbers).sorted()
+
+// A - B = elementos que son de A pero no de B
+// los que no son comunes, a diferencia de los intersección
+oddDigits.subtracting(primeNumbers).sorted()
+
+// A + B (A-B) union (B-A)
+// los que no son comunes entre A y B
+oddDigits.symmetricDifference(primeNumbers).sorted()
+
+//
+let farmAnimals: Set = ["🐶", "😹", "🐮", "🐔", "🐑"]
+let houseAnimals: Set = [ "🐶", "😹"]
+
+let cityAnimals: Set = ["🐁", "🕊"]
+
+// subCOnjunto cuando el pequeño está dentro del grande
+houseAnimals.isSubset(of: farmAnimals) // true = porque es un conjunto  más pequeño
+farmAnimals.isSubset(of: houseAnimals) // false = porque es un conjunto mas grande
+
+farmAnimals.isSuperset(of: houseAnimals) // es true porque es un conjunto más grande
+houseAnimals.isSuperset(of: farmAnimals) // es false porque es un conjunto más pequeño
+// A y B son disjunto si su intersección en vacía
+farmAnimals.isDisjoint(with: cityAnimals)
+
+// Reto.
+// Create a Set of Foods you like and another with fruits or vegetables
+
+let favouriteFood: Set = ["puré", "papás fritas", "pollo", "tallarines"]
+let favouriteFruits: Set = ["naranja", "platano", "pera", "piña", "mango"]
+
+// union
+favouriteFruits.union(favouriteFruits).sorted()
+
+// Intesection
+favouriteFood.intersection(favouriteFruits).sorted()
+
+// Subtracting
+favouriteFood.subtracting(favouriteFruits).sorted()
+
+// symmetricDifference
+favouriteFood.symmetricDifference(favouriteFruits).sorted()
+
+// isSubset
+favouriteFood.isSubset(of: favouriteFruits)
+
+// isSuperSet
+favouriteFood.isSuperset(of: favouriteFruits)
+
+// isDisjoint
+favouriteFood.isDisjoint(with: favouriteFruits)
+
 
