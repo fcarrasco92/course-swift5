@@ -54,3 +54,44 @@ for tickMark in stride(from: initialTime, to: endTime, by: intervalTime) {
     print("Hour: \(tickMark):00")
 }
 
+// Bucle While
+
+var i = 0
+while i <= 10 {
+    i += 1
+    print("i: \(i)")
+}
+
+print("i after while: \(i)")
+
+// execute at least one times
+repeat  {
+    i += 1
+} while i <= 10
+
+print("i => \(i)")
+
+// reto
+// validate 100 numbers and identify which are prime numbers
+
+func isPrime(n : UInt64) -> Bool {
+    if n == 0 { return false }
+    if n == 1 { return false }
+    var found = false
+    var min: UInt64 = 2 // Primer posible divisor
+    let max: UInt64 = UInt64(n / 2) // Matematicamente esta demostrado que si no existe hasta n / 2 no existe divisor \LOL
+
+    while min <= max && !found {
+        found = n % min != 0
+        min += 1
+    }
+    
+    return found
+}
+
+for n in 0...1000 {
+    if isPrime(n: UInt64(n)) {
+        print("\(n)", terminator: " ")
+    }
+}
+
