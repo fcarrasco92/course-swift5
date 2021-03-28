@@ -148,3 +148,45 @@ case "a", "e", "i", "o", "u":
 default:
     print("it's not vowel")
 }
+
+// Switch usando rangos - Interval matching
+
+let moons = 8392832
+let phrase = "lunas en Saturno"
+let naturalCount: String
+
+switch moons {
+    case 0:
+        naturalCount = "No hay"
+    case 1..<5:
+        naturalCount = "Hay unas pocas"
+    case 5..<12:
+        naturalCount = "Hay bastantes"
+
+    case 12..<100:
+        naturalCount = "Hay decenas de "
+    case 100..<1000:
+        naturalCount = "Hay centenares de"
+    default:
+        naturalCount = "Hay muchisimas lunas"
+}
+
+print("\(naturalCount) \(phrase)")
+
+// reto
+// use switch for the validation of the amount of money you can lend
+
+let moneyToBorrow: Int = 250000 // CLP
+var message: String = ""
+switch moneyToBorrow {
+    case 0..<10000:
+        message = "Take the money, no problem"
+    case 10000..<30000:
+        message = "I can lend the money, but I will need soon"
+    case 3000..<50000:
+        message = "it's a lot of money, I don't have that amount"
+    default:
+        message = "I'm sorry it's a lot money"
+}
+
+print("message: \(message)")
