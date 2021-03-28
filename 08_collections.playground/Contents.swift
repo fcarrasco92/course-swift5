@@ -280,3 +280,23 @@ familyNameDicTwo["Fernanda"] = 18
 print("cantidad de familia: \(familyNameDicTwo.count)")
 
 
+// iteraciones en diccionarios.
+
+// iteration for key and value
+for (key, value) in airports {
+    print("\(key) - \(value)")
+}
+
+// iteration for key
+for airportKey in airports.keys {
+    print(airportKey)
+}
+
+// iteration in value
+for airportValue in airports.values {
+    print(airportValue)
+}
+
+let airportsKey = [String](airports.keys.sorted())
+let airportsNames = [String](airports.values.sorted())
+
