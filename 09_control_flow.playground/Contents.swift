@@ -89,9 +89,37 @@ func isPrime(n : UInt64) -> Bool {
     return found
 }
 
-for n in 0...1000 {
+for n in 0...100 {
     if isPrime(n: UInt64(n)) {
         print("\(n)", terminator: " ")
     }
 }
 
+// uso de If y Else
+
+print("*******")
+var temp = 20
+
+if temp <= 15 { // temp <= 15
+    print("Hace frio! enciende la calefacción")
+}else if  temp >= 25 { // temp > 15
+    print("hace calor! encendamos el aire acondicionado")
+}else{ // 15 < temp < 25
+    print("la sensación termica es agradable. no hace falta modificar")
+}
+
+
+// Reto
+// use if else for the validation of the amount of money you can lend
+
+var money: Int = 20000 // CLP
+
+if money > 0 && money <= 10000 {
+    print("I can lend money")
+}else if money > 10000 && money < 30000 {
+    print("I can lend money without problem")
+}else if money > 30000 && money < 50000 {
+    print("I can lend you, but no all amount")
+}else{
+    print("exist the possibility we can lost frienship 🤣")
+}
