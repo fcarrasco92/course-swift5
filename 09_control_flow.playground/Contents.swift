@@ -123,3 +123,28 @@ if money > 0 && money <= 10000 {
 }else{
     print("exist the possibility we can lost frienship 🤣")
 }
+
+// switch case
+
+let someCharacter: Character = "A"
+
+switch someCharacter {
+case "a", "A":
+   print("the first letter in alphabet")
+case "z", "Z":
+    print("the last letter in alphebet")
+default:
+    print("is some another letter")
+}
+
+// Reto
+// validate with switch case if is vocal or not
+
+let someCharacterTest: Character =  "z"
+
+switch someCharacterTest.lowercased() {
+case "a", "e", "i", "o", "u":
+    print("it's vowel")
+default:
+    print("it's not vowel")
+}
