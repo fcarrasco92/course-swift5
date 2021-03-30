@@ -289,3 +289,19 @@ case (100, true):
 default:
     print("Error al capturar la calificacion")
 }
+
+// Control Transfer Sentences - continue, break, fallthrough, return, throw
+
+let sentence = "las mentes grandes piensan igual"
+var filteredSentence = ""
+let characterToRemove:[Character] = ["a","e","i","o","u"]
+for ch in sentence{
+    if characterToRemove.contains(ch) {
+        continue // continua con la siguiente ejecución
+    }
+    filteredSentence.append(ch)
+    if ch == "d"{
+        break // corta el bucle
+    }
+}
+print(filteredSentence)
