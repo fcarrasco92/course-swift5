@@ -190,3 +190,102 @@ switch moneyToBorrow {
 }
 
 print("message: \(message)")
+
+// SWITCH using TUPLAS
+
+let somePoint = (5,-8)
+switch somePoint {
+    case (0,0):
+        print("el punto \(somePoint) es el origen de coordenadas")
+    case (_, 0):
+        print("el punto \(somePoint) se halla sobre el eje de las X")
+    case (0, _):
+        print("el punto \(somePoint) se halla sobre el eje de las Y ")
+    case (-2...2, -2...2):
+        print("El punto \(somePoint) se halla en el interior del cuadrado de lado 4")
+    default:
+        print("El punto \(somePoint) está en algún otro lado")
+}
+
+
+let anotherPoint = (2,2)
+switch anotherPoint {
+    case (let x, 0):
+        print("Sobre el eje de las X, con valor \(x)")
+    case (0, let y):
+        print("sobre el eje de las Y, con valor \(y)")
+    case let (x,y) where x == y:
+        print("El punto se halla sobre la recta x = y")
+    case let (x,y) where x == -y:
+        print("El punto se halla sobre la recta x = -y")
+    case let (x,y):
+        print("En algún otro lugar del plano, en (\(x)), (\(y))")
+        
+}
+
+// Switch compuestos
+
+let anotherCharacter: Character = "e"
+
+switch anotherCharacter {
+    case "a","e","i","o","u":
+        print("Se trata de una vocal")
+    case "A"..."Z", "a"..."z": // TODO: acabar con el resto del abecedario
+        print("consonantes")
+    
+    default:
+        print("se trata de un caracter no vocal ni consonante (minuscula)")
+}
+
+
+let stillAnotherPoint = (9,0)
+
+switch stillAnotherPoint {
+    case (let distance, 0), (0, let distance):
+        print("Se halla sobre el eje, a distancia \(distance) del origen")
+    default:
+        print("No está sobre el eje")
+}
+
+// Reto uso de Switch
+
+let deliveryState: (estado: String, horario: String, distancia: Int) = ("Entregado", "A tiempo", 49 )
+let status: String
+
+// Reto
+switch deliveryState {
+case ("Entregado", "A tiempo", 0..<50):
+    status = "El pedido ha sido \(deliveryState.estado) a tiempo y cerca al punto GPS registrado"
+case ("Entregado", "Retrasado", 0..<50):
+    status = "El pedido ha sido entregado con retraso y cerca al punto GPS registrado"
+case ("Pendiente",_, _):
+    status = "El pedido todavia no a sido entregado"
+case ("Entregado", "A tiempo", 50...100):
+    status = "El pedido a sido entregado a tiempo, lejano al punto GPS registrado"
+case ("Entregado", "Retrasado", 50...100):
+    status = "El pedido a sido entregado con retraso, lejano al punto GPS registrado"
+default:
+    status = "Por favor ponerse en contacto con nuestros operadores"
+}
+
+print(status)
+
+
+let studentStatus: (UInt8,Bool) = (100,true)
+
+switch studentStatus {
+case (0..<70, _):
+    print("alumno reprobado")
+case (_, false):
+    print("alumno dado de baja por falta de pago")
+case (70..<80, true):
+    print("alumno con matricula pagada y calificacion aprobatoria: \(studentStatus.0) con descuento de 10% por calificacion")
+case (80..<90, true):
+    print("alumno con matricula pagada y calificacion aprobatoria: \(studentStatus.0) con descuento de 20% por calificacion")
+case (90..<100, true):
+    print("alumno con matricula pagada y calificacion aprobatoria: \(studentStatus.0) con descuento de 30% por calificacion")
+case (100, true):
+    print("alumno con matricula pagada y calificacion aprobatoria: \(studentStatus.0) con descuento de 40% por calificacion y mención honorifica")
+default:
+    print("Error al capturar la calificacion")
+}
