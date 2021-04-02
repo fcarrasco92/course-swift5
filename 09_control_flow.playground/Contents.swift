@@ -356,3 +356,12 @@ func testUserValidation(person:[String: Any]){
 
 people["surname"] = "Carrasco"
 testUserValidation(person: people)
+
+// manage version
+
+if #available(iOS 12,macOS 10.12, *){
+    // ejecutar las acciones a iOS12+, a macOS12+
+}else{
+    // mantener el codigo viejo con versiones anteriores de iOS, macOS
+    
+}
