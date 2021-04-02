@@ -305,3 +305,54 @@ for ch in sentence{
     }
 }
 print(filteredSentence)
+
+// Fallthrough
+
+let integerToDescribe = 5
+var description = "el número \(integerToDescribe) es"
+
+switch integerToDescribe {
+case 2,3,5,7,11,13,17,19:
+    description += "un número primo y"
+    fallthrough // permite analizar el siguiente case.
+default:
+    description += "un numero entero"
+}
+
+print(description)
+
+// return y guard
+
+
+var people = ["name": "Felipe", "age": 31, "isMale": true] as [String : Any]
+
+// surname no está en el diccionario, por ende si lo asignamo a una variable
+// tomará valor nil
+// con los conocimientos actuales que tenemos desarrollariamos lo siguiente
+// para evitar el valor nil
+if let surname = people["surname"]{
+    print(surname)
+}
+
+// swift tiene una sentencia especial para asegurarnos
+// que se pueden crear estas cosas.
+// la idea es cambiar el if de arriba por la palabra reservada"guard"
+// "guard" va asegurar que si existe "surname" y lo puede crear
+// esa variable surname.
+
+func testUserValidation(person:[String: Any]){
+    guard let surname = person["surname"] else {
+        print("el apellido no existe")
+        return
+    }
+    // aquí existe surname
+    print("surname user: \(surname)")
+    guard let age = person["age"] else{
+        print("la edad es desconocida")
+        return
+    }
+    print("la edad de la persona es \(age)")
+}
+
+people["surname"] = "Carrasco"
+testUserValidation(person: people)
