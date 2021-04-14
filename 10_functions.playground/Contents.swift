@@ -169,3 +169,31 @@ func mediaGeometrica(_ numbers: Double...) -> Double{
 }
 
 print(mediaGeometrica(1.20, 1.15, 1.33, 1.25))
+
+
+// Parámetros tipo inout
+
+let x = 5
+func addOne(number: Int){
+    var number2 = number
+    number2 += 1
+    print("el numero ahora vale \(number)")
+}
+
+addOne(number: x)
+
+
+func swapTwoInts(_ a: inout Int, _ b: inout Int){
+    let tempA = a
+    a = b
+    b = tempA
+}
+
+
+var someInt = 3
+var anotherInt = 7
+
+print("someInt vale \(someInt) y anotherInt vale \(anotherInt)")
+swapTwoInts(&someInt, &anotherInt)
+
+print("someInt vale \(someInt) y anotherInt vale \(anotherInt)")
