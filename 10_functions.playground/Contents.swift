@@ -243,6 +243,7 @@ func printMathResultThreeValues(_ mathOperation: (Int, Int, Int) -> Int, _ a: In
 printMathResultThreeValues(addThreeInts, 2, 4, 6)
 
 
+// refactor in Nested Function
 func stepForward(_ input: Int) -> Int{
     return input + 1
 }
@@ -255,6 +256,8 @@ func chooseStepFunction(backward: Bool) -> (Int) -> Int {
     return backward ? stepBackward : stepForward
 }
 
+
+
 var value = -7
 
 let moveNearer = chooseStepFunction(backward: value > 0)
@@ -265,4 +268,33 @@ while value != 0 {
 }
 
 print(value)
+print("cero!!!")
+
+print("*****************************+")
+// Nested Functions
+
+// Funciones anidadas: Una función está anidada cuando está definida dentro de otra
+func chooseStepFunctionNested(backward: Bool) -> (Int) -> Int {// Función que devuelve una función
+    func stepForward(_ input: Int) -> Int{// Función anidada
+        return input + 1
+    }
+
+    func stepBackward(_ input: Int) -> Int{// Función anidada
+        return input - 1
+    }
+
+    return backward ? stepBackward : stepForward
+}
+
+
+var valueNested = 7
+
+let moveNearerZeroNested = chooseStepFunction(backward: valueNested > 0)// Esto tendrá como valor una función que acepta un entero y retorna un entero
+
+while valueNested != 0 {
+    print("\(valueNested)...")
+    valueNested = moveNearerZeroNested(valueNested)// Por eso aquí al llamar esa variable, le mando un parámetro
+}
+
+print(valueNested)
 print("cero!!!")
