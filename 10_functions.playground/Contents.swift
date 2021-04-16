@@ -197,3 +197,72 @@ print("someInt vale \(someInt) y anotherInt vale \(anotherInt)")
 swapTwoInts(&someInt, &anotherInt)
 
 print("someInt vale \(someInt) y anotherInt vale \(anotherInt)")
+
+
+// Function Types
+
+func addTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a+b
+} // (Int, Int) -> Int
+
+func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
+    return a*b
+}// (Int, Int) -> Int
+
+func subtract(_ a: Int, _ b: Int) -> Int{
+    return a-b
+}
+
+func printHW(){
+    print("Hello world")
+}// () -> Void
+
+var mathFunction: (Int, Int) -> Int = multiplyTwoInts
+mathFunction(4,5)
+
+func printMathResult(_ mathFunc: (Int, Int) -> Int, _ a: Int, _ b: Int){
+    print("Resultado: \(mathFunc(a,b))")
+}
+
+printMathResult(multiplyTwoInts, 5, 9)
+print("*********")
+printMathResult(subtract, 3, 2)
+
+/*
+ apuntes
+ **/
+
+func addThreeInts(_ a: Int, _ b: Int, c: Int) -> Int {
+    return a+b+c
+}
+
+func printMathResultThreeValues(_ mathOperation: (Int, Int, Int) -> Int, _ a: Int, _ b: Int,_ c: Int){
+    print("Result: \(mathOperation(a, b, c))")
+}
+
+printMathResultThreeValues(addThreeInts, 2, 4, 6)
+
+
+func stepForward(_ input: Int) -> Int{
+    return input + 1
+}
+
+func stepBackward(_ input: Int) -> Int{
+    return input - 1
+}
+
+func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    return backward ? stepBackward : stepForward
+}
+
+var value = -7
+
+let moveNearer = chooseStepFunction(backward: value > 0)
+
+while value != 0 {
+    print("\(value)...")
+    value = moveNearer(value)
+}
+
+print(value)
+print("cero!!!")
