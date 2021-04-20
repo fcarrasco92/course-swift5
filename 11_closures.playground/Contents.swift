@@ -63,3 +63,50 @@ let numbersStrings = numbers.map{ (number) -> String in
     output = isNegative ? "\(output) negativo" : output
     return output
 }
+
+
+// Capturar Valores
+
+func makeIncrement(forIncrement amount: Int) -> () -> Int{
+    var runningTotal = 0
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+
+let incrementByTen = makeIncrement(forIncrement: 10)
+incrementByTen()
+
+
+
+func calculateIvaTotalProducts(_ product: Int) -> () -> Int{
+    var totalIva = 0.0
+    let IVA = 0.19
+    func calculateIvaByProduct() -> Int{
+        totalIva = Double(product) * IVA
+        return product + Int(totalIva)
+    }
+    return calculateIvaByProduct
+}
+
+let productCaculate =  calculateIvaTotalProducts(2000)
+productCaculate()
+
+
+func calculateIVAListProducts(listProduct products: [Int]) -> () -> Int{
+    var totalWithIVA = 0
+    let IVA = 0.19
+    func calculateIVAProducts() -> Int {
+        for product in products {
+            let IVAProduct = Double(product) * IVA
+            totalWithIVA += product + Int(IVAProduct)
+        }
+        return totalWithIVA
+    }
+    return calculateIVAProducts
+}
+
+let purchasesOfWeek = calculateIVAListProducts(listProduct: [2000, 3000, 5000, 10000])
+print(purchasesOfWeek())
