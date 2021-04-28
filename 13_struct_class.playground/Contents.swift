@@ -94,7 +94,7 @@ alsoTenEigthy.frameRate = 30.0
 
 tenEighty
 
-if tenEighty === alsoTenEigthy { // !== no identico 
+if tenEighty === alsoTenEigthy { // !== no identico
     print("Son el mismo objeto")
 }else{
     print("NO son el mismo objeto")
