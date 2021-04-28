@@ -79,3 +79,23 @@ print(oldDirection)
 
 // cuando realizamos la copia de un struct o de un enum, toman espacios de memoria independientes.
 
+//Clases: datos referenciados
+
+let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = "1080i"
+tenEighty.frameRate = 25.0
+
+
+let alsoTenEigthy = tenEighty
+
+alsoTenEigthy.frameRate = 30.0
+
+tenEighty
+
+if tenEighty === alsoTenEigthy { // !== no identico 
+    print("Son el mismo objeto")
+}else{
+    print("NO son el mismo objeto")
+}
