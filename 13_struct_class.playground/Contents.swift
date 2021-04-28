@@ -45,3 +45,37 @@ print(someVideoMode.resolution.width)
 
 someVideoMode.frameRate = 30.0
 print(someVideoMode.frameRate)
+
+
+
+// Struct datos copiados
+// struct = copias, tienen su propio espacio de memoria
+// class = referencias, apuntan a un espacio de memoria
+
+let vga = Resolution(width: 640, height: 480)
+vga.width
+vga.height
+
+let hd = Resolution(width: 1920, height: 1080)
+
+var cinema = hd
+print("\(cinema.width) x \(cinema.height)")
+cinema.width = 2048
+
+print("cinema = \(cinema.width) x \(cinema.height)")
+print("hd = \(hd.width) x \(hd.height)")
+
+
+enum CompassPoint{
+    case north, south, east, west
+}
+
+var currentDirection = CompassPoint.north
+let oldDirection = currentDirection
+currentDirection = .south
+
+print(currentDirection)
+print(oldDirection)
+
+// cuando realizamos la copia de un struct o de un enum, toman espacios de memoria independientes.
+
