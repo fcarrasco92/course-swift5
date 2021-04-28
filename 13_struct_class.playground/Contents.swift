@@ -99,3 +99,8 @@ if tenEighty === alsoTenEigthy { // !== no identico
 }else{
     print("NO son el mismo objeto")
 }
+
+
+// Stored Properties
+
+
