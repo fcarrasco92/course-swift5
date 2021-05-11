@@ -81,3 +81,63 @@ let initalSquareCenter = square.center
 
 square.center = Point(x: 20, y: 20)
 
+// Computed Properties de sólo lectura
+
+struct Cuboid {
+    var width = 0.0, height = 0.0, depth = 0.0
+    
+    var volume: Double {
+            return width * height * depth
+    }
+}
+
+let cuboid = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+
+cuboid.volume
+
+// cuboid.volume = 57.0 launch error puesto que la variable es solo de lectura.
+
+
+// Challenge create a struct person
+enum Languague {
+    case Spanish, English, French
+}
+
+enum Gender {
+    case male, female
+}
+
+struct Person {
+    var name: String
+}
+
+struct Greeting{
+    var person: Person
+    var languague: Languague
+    var gender: Gender
+    var languagueGreeting: String {
+        switch self.languague {
+        case .Spanish:
+            return "Hola"
+        case .English:
+            return "Hello"
+        case .French:
+            return "Salut"
+        }
+    }
+    
+    var abbreviations: String{
+        switch self.gender {
+        case .male:
+            return "\(languagueGreeting) Mr. \(person.name)"
+        case .female:
+            return "\(languagueGreeting) Mrs. \(person.name)"
+
+        }
+    }
+}
+
+let person = Person(name: "Felipe")
+let welcomeGreeting = Greeting(person: person, languague: .English, gender: .male)
+
+print(welcomeGreeting.abbreviations)
